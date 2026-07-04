@@ -70,7 +70,7 @@ async def main():
     site = web.TCPSite(runner, host=WEBAPP_HOST, port=WEBAPP_PORT)
     await site.start()
 
-    await dp.start_polling()
+    await asyncio.Event().wait()
 
 
 if __name__ == "__main__":
