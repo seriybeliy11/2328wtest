@@ -7,9 +7,9 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-PROJECT_UUID = app.config['PROJECT_UUID']
-API_KEY = app.config['API_KEY']
-TELEGRAM_TOKEN = app.config['TELEGRAM_TOKEN']
+PROJECT_UUID = os.getenv("PROJECT_UUID")
+API_KEY = os.getenv("API_KEY")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 def api_sign(body: str, api_key: str) -> str:
     b64 = base64.b64encode(body.encode())
