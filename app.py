@@ -8,6 +8,9 @@ import os
 
 app = Flask(__name__)
 
+PORT = int(os.environ.get('PORT', 5000))  # ❗️ Важно для Render
+HOST = '0.0.0.0'
+
 PROJECT_UUID = os.getenv("PROJECT_UUID")
 API_KEY = os.getenv("API_KEY")
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
